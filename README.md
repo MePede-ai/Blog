@@ -1,7 +1,7 @@
 # Blog do mepede.ai: conteúdo
 
 Este repositório guarda **só o conteúdo** do blog (mepede.ai/blog): posts, categorias, autores e imagens.
-Aqui não tem código do site, deploy nem senha. O site (repositório `landingpage`) só lê o que for publicado daqui.
+Aqui não tem código do site, deploy nem senha. O site (repositório `landingpage`, que lê de `MePede-ai/Blog`) só lê o que for publicado daqui.
 
 ## Como funciona
 
