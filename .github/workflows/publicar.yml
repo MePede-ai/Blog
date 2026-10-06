@@ -1,0 +1,52 @@
+# Valida o conteúdo e publica na branch `publicado`, que é o que o site lê.
+# Se a validação falhar, nada é publicado e o site segue com a última versão boa.
+name: Validar e publicar
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publicar
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Instalar leitor de YAML
+        run: npm install --no-save --no-package-lock yaml@2
+
+      - name: Validar e gerar blog.json
+        run: node scripts/gerar.cjs
+
+      - name: Publicar na branch publicado
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        env:
+          TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+        run: |
+          set -e
+          OUT="$(mktemp -d)"
+          cp dist/blog.json "$OUT/"
+          [ -d imagens ] && cp -R imagens "$OUT/"
+          [ -d materiais ] && cp -R materiais "$OUT/"
+          cd "$OUT"
+          git init -q -b publicado
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Publicado a partir de ${SHA}"
+          git push -q --force "https://x-access-token:${TOKEN}@github.com/${REPO}.git" publicado
