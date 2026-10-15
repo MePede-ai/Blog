@@ -24,6 +24,7 @@ const erro = (arquivo, msg) => erros.push(`${arquivo}: ${msg}`);
 // 1) Só conteúdo entra aqui. Qualquer arquivo fora desta lista reprova.
 const PERMITIDOS = [
   /^README\.md$/,
+  /^CLAUDE\.md$/,
   /^\.gitignore$/,
   /^scripts\/gerar\.cjs$/,
   /^\.github\/workflows\/publicar\.yml$/,
