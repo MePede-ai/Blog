@@ -24,7 +24,7 @@ Valem para qualquer sessão do Claude que trabalhe para a MePede, inclusive as p
 ## 3. O que o Claude pode fazer sozinho
 
 - **Blog (MePede-ai/Blog):**
-  - criar e corrigir posts, imagens e cadastros (categorias, autores e materiais), seguindo o "Guia editorial do blog";
+  - criar e corrigir posts, imagens e cadastros (categorias, autores e materiais), seguindo o "Guia editorial do blog" (seção 7 deste arquivo);
   - publicar direto na `main`, porque tudo passa pela validação automática antes de ir para o ar.
 - **BLACKBOX (MePede-ai/blackbox):**
   - **conteúdo** (posts, edições e imagens) pode ir direto para a `main`;
@@ -53,3 +53,77 @@ Não são obrigatórias, mas reforçam a segurança:
 - Tirar do app os repositórios que não têm nada a ver com isso, como os da stack-atlas, em github.com/settings/installations.
 - Ativar a verificação em duas etapas nas contas do GitHub.
 - Ativar a proteção da branch `main` no `blackbox` e no `Blog`, bloqueando exclusão e force push.
+
+## 7. Guia editorial do blog (MePede-ai/Blog)
+
+Regras de toda publicação, inclusive a automática (segunda, quarta e sexta, de manhã). Guardado aqui porque a validação do repositório só aceita este arquivo, o README, posts, cadastros e imagens. Qualquer pessoa do time pode editar; a próxima execução já segue a versão nova. Origem: "Guia editorial do blog" do projeto Claude "Me Pede Ai" (05/11/2026); caminhos das imagens corrigidos para os do repositório.
+
+### Para quem escrevemos
+
+- Dono e gerente de restaurante, lanchonete, pizzaria e delivery pequeno e médio. Pessoa ocupada, que lê no celular entre um pedido e outro. Quer saber o que mudou e o que fazer na segunda-feira.
+
+### Tom
+- Português do Brasil, direto e próximo. "Pra" é permitido; gíria, não.
+- Sem juridiquês e sem economês. Termo técnico vem explicado na primeira vez.
+- Frases curtas. Um assunto por parágrafo.
+- Nada de sensacionalismo, caixa alta ou emoji.
+
+### O que publicar
+
+Alternar ao longo da semana:
+- Notícia comentada (pelo menos 1 por semana): fato dos últimos 7 dias que mexe no caixa ou na operação do restaurante. Ex.: decisões do Cade e da Justiça sobre apps de delivery, Pix e Banco Central, reforma tributária, dados da Abrasel.
+- Guia prático: como fazer algo melhor (cardápio, ticket médio, taxa de entrega, atendimento no WhatsApp, custos por pedido).
+- Conta da semana: um cálculo simples com valores de exemplo, deixando claro que são exemplos.
+
+- Antes de escrever, conferir os posts já publicados e não repetir assunto dos últimos 30 dias, a não ser que haja fato novo.
+
+### Categorias
+
+- Mercado, Delivery, Pagamentos, Gestão, Impostos, Vendas. "Novidades do produto" é só para o time, nunca para a automação.
+
+### Formato de cada post
+- Título com até 80 caracteres, dizendo o que mudou ou o que a pessoa ganha.
+- Resumo de 1 a 2 frases (aparece no card e no Google).
+- Bloco "Em 30 segundos" com 3 tópicos.
+- Corpo com 3 a 5 intertítulos, entre 700 e 1.100 palavras.
+- No máximo 1 destaque em citação.
+- "O que fazer agora", com 3 ou 4 passos práticos.
+- "Fontes", com nome do veículo ou órgão, data e link.
+- De 3 a 5 tags.
+- Título e descrição para SEO.
+
+### Checagem de fatos (obrigatória, porque publica sem revisão humana)
+- Todo fato precisa de fonte primária (órgão, tribunal, Banco Central, Abrasel, empresa) ou de duas fontes jornalísticas independentes. Sem isso, não entra.
+- Número sempre com a data e a origem.
+- Nunca afirmar algo que a fonte trata como possibilidade ("deve", "pode", "prevê").
+- Não copiar trechos de outras matérias. Uma citação curta, entre aspas e com crédito, no máximo.
+- Na dúvida sobre um fato, ele sai do texto. Se a pauta inteira depender dele, trocar de pauta.
+
+### Posicionamento do mepede.ai
+- O mepede.ai é infraestrutura de pedidos e pagamento para o restaurante vender pelo próprio canal. Não é marketplace.
+- Mencionar o mepede.ai no máximo uma vez por post, no fim e de forma natural, só quando fizer sentido.
+
+### Nunca escrever
+- Preço, plano ou taxa do mepede.ai.
+- "Sem comissão" de forma absoluta.
+- Promessa de dinheiro na hora. Pix cai em D+1 e cartão em D+2.
+- Recomendação jurídica ou tributária taxativa. Em temas de imposto e contrato, orientar a confirmar com contador ou advogado.
+- Ataque ou deboche contra concorrente. Fatos sobre iFood, 99Food, Keeta e outros, sempre com fonte e tom neutro.
+- Política partidária, dados pessoais ou caso envolvendo pessoa física identificável.
+
+### Autoria
+- Posts automáticos são assinados "Redação mepede.ai". Nunca usar nome de pessoa inventada.
+- Os nomes usados nos mockups do Figma (Carla Menezes, Rafael Tanaka) são fictícios e não vão para o site no ar.
+
+### Imagens
+- Capas são fotos originais geradas para o blog (gerador de imagens do Figma, plano da Vyta Studio), no estilo do banco: foto editorial, luz natural quente, restaurante brasileiro, toques de laranja, proporção 3:2.
+- Toda geração pede explicitamente: sem texto legível, sem logotipo, sem marca, sem placas. Nunca retratar pessoa real ou famosa, nem marca de app (iFood, 99Food, Keeta etc.), mesmo quando a notícia for sobre ela.
+- O banco fica em imagens/banco/ com o nome <categoria>-NN.webp (ex.: delivery-02.webp). Toda imagem nova gerada entra no banco além de virar capa.
+- A capa do post vai em imagens/posts/<slug>/cover.webp, em webp com 1264 px de largura.
+- Nunca usar foto de notícia, do Google, de banco pago sem licença ou de redes sociais.
+- Não repetir uma imagem usada nas últimas 20 publicações. Se o banco da categoria estiver esgotado, gerar uma nova.
+- Todo post tem texto alternativo descrevendo o que aparece na foto (não o assunto da matéria).
+
+### Depois de publicar
+- Avisar o Henrique por e-mail e criar uma tarefa no ClickUp (MPA Group, lista "Site e blog", no nome do Henrique) "Conferir post do blog: <título>", com o link do post e um resumo de uma linha (decisão do Henrique, 05/11).
+- Se um erro for apontado, corrigir o post e acrescentar no fim uma nota de correção com a data.

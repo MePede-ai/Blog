@@ -31,7 +31,7 @@ Campos do post: `title`, `excerpt`, `category`, `author`, `publishedAt` (AAAA-MM
 - **No painel:** rode a landing em modo dev com este repositório em `.blog-conteudo/` (veja o README da landing) e abra `localhost:3000/keystatic`.
 - **No GitHub:** dá para editar qualquer `.mdoc` direto no navegador.
 
-As regras editoriais (tom, checagem de fatos, imagens, o que nunca escrever) estão no "Guia editorial do blog", no projeto do Claude.
+As regras editoriais (tom, checagem de fatos, imagens, o que nunca escrever) estão na seção 7 do CLAUDE.md ("Guia editorial do blog").
 
 ## Conferir antes de enviar (opcional)
 
